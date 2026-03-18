@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shapes yay</title>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: #000;
+        color: #fff;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        overflow: hidden;
+      }
+      #ui {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+      }
+      #controls { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+      #startBtn {
+        pointer-events: auto;
+        appearance: none;
+        border: none;
+        border-radius: 999px;
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        background: #7c3aed;
+        color: #fff;
+        box-shadow: 0 10px 30px rgba(124,58,237,0.35);
+        transition: transform 120ms ease, box-shadow 120ms ease;
+        cursor: pointer;
+      }
+      #startBtn:hover { transform: translateY(-1px); box-shadow: 0 14px 40px rgba(124,58,237,0.45); }
+      #startBtn:active { transform: translateY(0); box-shadow: 0 8px 24px rgba(124,58,237,0.3); }
+      #systemBtn {
+        pointer-events: auto;
+        appearance: none;
+        border: none;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        background: #0ea5e9;
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(14,165,233,0.35);
+        transition: transform 120ms ease, box-shadow 120ms ease;
+        cursor: pointer;
+        opacity: 0.95;
+      }
+      #systemBtn:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(14,165,233,0.45); opacity: 1; }
+      #systemBtn:active { transform: translateY(0); box-shadow: 0 6px 20px rgba(14,165,233,0.3); }
+      #hint { position: fixed; left: 12px; bottom: 12px; opacity: 0.7; font-size: 12px; }
+    </style>
+    <!-- p5.js core and sound addon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js" referrerpolicy="no-referrer"></script>
+    <!-- ml5.js (not strictly required for amplitude-based detection, included per request) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.12.2/ml5.min.js" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <div id="ui">
+      <div id="controls">
+        <button id="startBtn" type="button" aria-label="Start microphone">Enable microphone</button>
+        <button id="systemBtn" type="button" aria-label="Use system audio" style="pointer-events:auto;">Use system audio</button>
+      </div>
+    </div>
+
+    <script src="./sketch.js"></script>
+  </body>
+  </html>
+
+
